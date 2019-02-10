@@ -1,0 +1,49 @@
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body  background="http://citymesh.com/src/Frontend/Files/blog/images/source/citymesh-covers-tour-de-france-with-moobox-tripod-en.jpg">
+<div class="container">
+    <ul class="nav nav-pills">
+        <li role="presentation"><a href="/drivers">Drivers</a></li>
+        <li role="presentation"><a href="/teams">Teams</a></li>
+        <li role="presentation" class="active"><a href="/countries">Countries</a></li>
+        <li role="presentation"><a href="/tracks">Tracks</a></li>
+        <li role="presentation"><a href="/races">Races</a></li>
+        <li role="presentation"><a href="/driver_standings">Standings</a></li>
+    </ul>
+    <h2 style= "color:#FFFFFF;" >Countries</h2>
+    <div class="col-md-6">
+        <table class="table table-bordered">
+            <tr>
+                <th style="background-color: rgba(169, 179, 179, 0.8);">Name</th>
+                <th style="background-color: rgba(169, 179, 179, 0.8);">Delete</th>
+            </tr>
+            {{#countries}}
+                <tr style="background-color: rgba(169, 179, 179, 0.8);" >
+                    <td>{{country_name}}</td>
+                    <td><a style= "color:#1947D1;" href="/countries/{{id}}/delete">Delete</a></td>
+                </tr>
+            {{/countries}}
+        </table>
+    </div>
+    <div class="col-md-4">
+        <h4 style= "color:#FFFFFF;" >Add new country:</h4>
+        <form action="/countries/create" method="post">
+            <div class="form-group">
+                <label style= "color:#FFFFFF;" for="country_name">Name</label>
+                <input type="text" name="country_name" class="form-control"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

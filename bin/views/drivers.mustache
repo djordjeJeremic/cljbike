@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Drivers</title>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </head>
+    <body background= "http://ronputzi.com/wp-content/uploads/2014/12/Tour_de_France_2012.jpg" >
+        <div class="container">
+            <ul class="nav nav-pills">
+                <li role="presentation" class="active"><a href="/drivers">Drivers</a></li>
+                <li role="presentation"><a href="/teams">Teams</a></li>
+                <li role="presentation"><a href="/countries">Countries</a></li>
+                <li role="presentation"><a href="/tracks">Tracks</a></li>
+                <li role="presentation"><a href="/races">Races</a></li>
+                <li role="presentation"><a href="/driver_standings">Standings</a></li>
+            </ul>
+            <h2 style= "color:#FFFFFF;" >Drivers</h2>
+            <a href="/drivers/new"><button class="btn btn-primary">New</button></a>
+            
+            <table class="table table-bordered">
+                <tr>
+                    <th style="background-color: rgba(169, 179, 179, 0.8);">Number</th>
+                    <th style="background-color: rgba(169, 179, 179, 0.8);">Name</th>
+                    <th style="background-color: rgba(169, 179, 179, 0.8);">Team</th>
+                    <th style="background-color: rgba(169, 179, 179, 0.8);">Country</th>
+                    <th style="background-color: rgba(169, 179, 179, 0.8);">Edit</th>
+                    <th style="background-color: rgba(169, 179, 179, 0.8);">Delete</th>
+                    {{#drivers}}
+                        <tr>
+                            <td style="background-color: rgba(169, 179, 179, 0.8);">{{driver_number}}</td>
+                            <td style="background-color: rgba(169, 179, 179, 0.8);">{{driver_name}}</td>
+                            <td style="background-color: rgba(169, 179, 179, 0.8);">{{team_name}}</td>
+                            <td style="background-color: rgba(169, 179, 179, 0.8);">{{country_name}}</td>
+                            <td style="background-color: rgba(169, 179, 179, 0.8);"><a href="/drivers/{{id}}/edit">Edit</a></td>
+                            <td style="background-color: rgba(169, 179, 179, 0.8);"><a href="/drivers/{{id}}/delete">Delete</a></td>
+                        </tr>
+                    {{/drivers}}
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body background= "http://blogs.ft.com/photo-diary/files/2015/07/blg_tdf.jpg">
+<div class="container">
+    <ul class="nav nav-pills">
+        <li role="presentation"><a href="/drivers">Drivers</a></li>
+        <li role="presentation"><a href="/teams">Teams</a></li>
+        <li role="presentation"><a href="/countries">Countries</a></li>
+        <li role="presentation" class="active"><a href="/tracks">Tracks</a></li>
+        <li role="presentation"><a href="/races">Races</a></li>
+        <li role="presentation"><a href="/driver_standings">Standings</a></li>
+    </ul>
+    <h2 style= "color:#FFFFFF;" >Tracks</h2>
+    <div class="col-md-6">
+        <table class="table table-bordered">
+            <tr>
+                <th style="background-color: rgba(169, 179, 179, 0.8);">Name</th>
+                <th style="background-color: rgba(169, 179, 179, 0.8);">Country</th>
+                <th style="background-color: rgba(169, 179, 179, 0.8);">Delete</th>
+            </tr>
+            {{#tracks}}
+                <tr style="background-color: rgba(169, 179, 179, 0.8);">
+                    <td>{{track_name}}</td>
+                    <td>{{country_name}}</td>
+                    <td><a style= "color:#1947D1;" href="tracks/{{id}}/delete">Delete</a></td>
+                </tr>
+            {{/tracks}}
+        </table>
+    </div>
+    <div class="col-md-4">
+        <h4 style= "color:#FFFFFF;" ><b>Add new track:</b></h4>
+        <form action="tracks/create" method="post">
+            <div class="form-group">
+                <label style= "color:#FFFFFF;" for="track_name"><b>Name</b></label>
+                <input type="text" name="track_name" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label style= "color:#FFFFFF;" for="country_id"><b>Country</b></label>
+                <select name="country_id" id="country_id" class="form-control">
+                    {{#countries}}
+                        <option value="{{id}}">{{country_name}}</option>
+                    {{/countries}}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

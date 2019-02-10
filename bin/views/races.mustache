@@ -1,0 +1,63 @@
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body background= "http://gamerliving.net/wp-content/uploads/2013/07/Tour-de-France-100th-Edition-2.jpg" >
+<div class="container">
+    <ul class="nav nav-pills">
+        <li role="presentation"><a href="/drivers">Drivers</a></li>
+        <li role="presentation"><a href="/teams">Teams</a></li>
+        <li role="presentation"><a href="/countries">Countries</a></li>
+        <li role="presentation"><a href="/tracks">Tracks</a></li>
+        <li role="presentation" class="active"><a href="/races">Races</a></li>
+        <li role="presentation"><a href="/driver_standings">Standings</a></li>
+    </ul>
+    <h2 style= "color:#FFFFFF;" >Races</h2>
+
+    <div class="col-md-6">
+        <a href="/race_results/new"><button class="btn btn-primary">New results</button></a>
+        <table class="table table-bordered">
+            <tr>
+                <th style="background-color: rgba(169, 179, 179, 0.8);">Track</th>
+                <th style="background-color: rgba(169, 179, 179, 0.8);">Date</th>
+                <th style="background-color: rgba(169, 179, 179, 0.8);">Edit</th>
+                <th style="background-color: rgba(169, 179, 179, 0.8);">Results</th>
+            </tr>
+            {{#races}}
+                <tr style="background-color: rgba(169, 179, 179, 0.8);">
+                    <td>{{track_name}}</td>
+                    <td>{{race_date}}</td>
+                    <td><a style= "color:#1947D1;" href="/races/{{id}}/edit">Edit</a></td>
+                    <td><a style= "color:#1947D1;" href="/races/{{id}}/results">Results</a></td>
+                </tr>
+            {{/races}}
+        </table>
+    </div>
+    <div class="col-md-4">
+        <h4 style= "color:#FFFFFF;" >Add new race:</h4>
+        <form action="/races/create" method="post">
+            <div class="form-group">
+                <label style= "color:#FFFFFF;" for="track_id">Track</label>
+                <select name="track_id" id="track_id" class="form-control">
+                    {{#tracks}}
+                        <option value="{{id}}">{{track_name}}</option>
+                    {{/tracks}}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="race_date">Date</label>
+                <input type="date" name="race_date" class="form-control"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

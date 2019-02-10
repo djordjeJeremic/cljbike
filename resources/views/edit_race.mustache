@@ -1,0 +1,32 @@
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body background="http://cdn.coresites.factorymedia.com/rcuk/wp-content/uploads/2012/07/cav.jpg">
+<div class="container">
+    <div class="col-md-4">
+        <h3>Edit race</h3>
+        <form action="/races/{{race.id}}/update" method="post">
+            <div class="form-group">
+                <label for="track_name">Name</label>
+                <input type="text" class="form-control" name="track_name" value="{{race.track_name}}" disabled="disabled"/>
+            </div>
+            <div class="form-group">
+                <label for="race_date">Date</label>
+                <input type="date" class="form-control" name="race_date" value="{{race.race_date}}"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+            <br/>
+            <a href="/races">Back</a>
+        </form>
+    </div>
+</div>
+</body>
+</html>

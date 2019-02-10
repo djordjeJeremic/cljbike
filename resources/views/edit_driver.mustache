@@ -1,0 +1,48 @@
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body background="http://i.stack.imgur.com/kCsKS.jpg">
+<div class="container">
+    <div class="col-md-4">
+        <h3>Edit driver:</h3>
+        <form action="/drivers/{{driver.id}}/update" method="post">
+            <div class="form-group">
+                <label for="driver_name">Name</label>
+                <input type="text" class="form-control" name="driver_name" value="{{driver.driver_name}}"/>
+            </div>
+            <div class="form-group">
+                <label for="driver_number">Number</label>
+                <input type="number" class="form-control" name="driver_number" value="{{driver.driver_number}}"/>
+            </div>
+            <div class="form-group">
+                <label for="team_id">Team</label>
+                <select name="team_id" class="form-control" id="team_id">
+                    {{#teams}}
+                        <option value="{{id}}">{{team_name}}</option>
+                    {{/teams}}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="country_id">Team</label>
+                <select name="country_id" class="form-control" id="country_id">
+                    {{#countries}}
+                        <option value="{{id}}">{{country_name}}</option>
+                    {{/countries}}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+            <br/>
+            <a href="/drivers">Back</a>
+        </form>
+    </div>
+</div>
+</body>
+</html>

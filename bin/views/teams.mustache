@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>Drivers</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body background = "http://www.hdwallpapers-3d.com/wp-content/uploads/2014/07/tour-de-france-hd-wallpaper-12.jpg">
+<div class="container">
+    <ul class="nav nav-pills">
+        <li role="presentation"><a href="/drivers">Drivers</a></li>
+        <li role="presentation" class="active"><a href="/teams">Teams</a></li>
+        <li role="presentation"><a href="/countries">Countries</a></li>
+        <li role="presentation"><a href="/tracks">Tracks</a></li>
+        <li role="presentation"><a href="/races">Races</a></li>
+        <li role="presentation"><a href="/driver_standings">Standings</a></li>
+    </ul>
+    <h2 style= "color:#FFFFFF;" >Teams</h2>
+    <div class="col-md-6">
+        <table class="table table-bordered">
+            <tr>
+                <th style="background-color: rgba(169, 179, 179, 0.8);">Name</th>
+                <th style="background-color: rgba(169, 179, 179, 0.8);">Delete</th>
+            </tr>
+            {{#teams}}
+                <tr style="background-color: rgba(169, 179, 179, 0.8);">
+                    <td>{{team_name}}</td>
+                    <td><a style= "color:#1947D1;" href="/teams/{{id}}/delete">Delete</a></td>
+                </tr>
+            {{/teams}}
+        </table>
+    </div>
+    <div class="col-md-4">
+        <h4 style= "color:#FFFFFF;" >Add new team:</h4>
+        <form action="/teams/create" method="post">
+            <div class="form-group">
+                <label style= "color:#FFFFFF;" for="team_name">Name</label>
+                <input type="text" name="team_name" class="form-control"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

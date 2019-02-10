@@ -1,0 +1,41 @@
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body background= "http://blogs.ft.com/photo-diary/files/2015/07/tour.jpg">
+<div class="container">
+    <ul class="nav nav-pills">
+        <li role="presentation"><a href="/drivers">Drivers</a></li>
+        <li role="presentation"><a href="/teams">Teams</a></li>
+        <li role="presentation"><a href="/countries">Countries</a></li>
+        <li role="presentation"><a href="/tracks">Tracks</a></li>
+        <li role="presentation"><a href="/races">Races</a></li>
+        <li role="presentation" class="active"><a href="/driver_standings">Standings</a></li>
+    </ul>
+    <h2 style= "color:#FFFFFF;" >Driver standings</h2>
+    <table class="table table-bordered">
+        <tr style="background-color: rgba(169, 179, 179, 0.8);" >
+            <th>Number</th>
+            <th>Name</th>
+            <th>Team</th>
+            <th>Points</th>
+        </tr>
+        {{#drivers}}
+            <tr style="background-color: rgba(169, 179, 179, 0.8);" >
+                <td>{{driver_number}}</td>
+                <td>{{driver_name}}</td>
+                <td>{{team_name}}</td>
+                <td>{{driver_points}}</td>
+            </tr>
+        {{/drivers}}
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body background="http://cdn.velonews.competitor.com/files/2011/07/CAV-WINS2.jpg">
+<div class="container">
+    <h3>Add new result:</h3>
+        <form action="/race_results/create" method="post">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="race_id">Race</label>
+                    <select name="race_id" id="race_id" class="form-control">
+                        {{#races}}
+                            <option value="{{id}}">{{track_name}}</option>
+                        {{/races}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="no1_id">No1</label>
+                    <select name="no1_id" id="no1_id" class="form-control">
+                        <option value="0">Choose...</option>
+                        {{#drivers}}
+                            <option value="{{id}}">{{driver_name}}</option>
+                        {{/drivers}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="no2_id">No2</label>
+                    <select name="no2_id" id="no2_id" class="form-control">
+                        <option value="0">Choose...</option>
+                        {{#drivers}}
+                            <option value="{{id}}">{{driver_name}}</option>
+                        {{/drivers}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="no3_id">No3</label>
+                    <select name="no3_id" id="no3_id" class="form-control">
+                        <option value="0">Choose...</option>
+                        {{#drivers}}
+                            <option value="{{id}}">{{driver_name}}</option>
+                        {{/drivers}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="no4_id">No4</label>
+                    <select name="no4_id" id="no4_id" class="form-control">
+                        <option value="0">Choose...</option>
+                        {{#drivers}}
+                            <option value="{{id}}">{{driver_name}}</option>
+                        {{/drivers}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="no5_id">No5</label>
+                    <select name="no5_id" id="no5_id" class="form-control">
+                        <option value="0">Choose...</option>
+                        {{#drivers}}
+                            <option value="{{id}}">{{driver_name}}</option>
+                        {{/drivers}}
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="no6_id">No6</label>
+                    <select name="no6_id" id="no6_id" class="form-control">
+                        <option value="0">Choose...</option>
+                        {{#drivers}}
+                            <option value="{{id}}">{{driver_name}}</option>
+                        {{/drivers}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="no7_id">No7</label>
+                    <select name="no7_id" id="no7_id" class="form-control">
+                        <option value="0">Choose...</option>
+                        {{#drivers}}
+                            <option value="{{id}}">{{driver_name}}</option>
+                        {{/drivers}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="no8_id">No8</label>
+                    <select name="no8_id" id="no8_id" class="form-control">
+                        <option value="0">Choose...</option>
+                        {{#drivers}}
+                            <option value="{{id}}">{{driver_name}}</option>
+                        {{/drivers}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="no9_id">No9</label>
+                    <select name="no9_id" id="no9_id" class="form-control">
+                        <option value="0">Choose...</option>
+                        {{#drivers}}
+                            <option value="{{id}}">{{driver_name}}</option>
+                        {{/drivers}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="no10_id">No10</label>
+                    <select name="no10_id" id="no10_id" class="form-control">
+                        <option value="0">Choose...</option>
+                        {{#drivers}}
+                            <option value="{{id}}">{{driver_name}}</option>
+                        {{/drivers}}
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <br/>
+                <a href="/races">Back</a>
+            </div>
+        </form>
+</div>
+</body>
+</html>
