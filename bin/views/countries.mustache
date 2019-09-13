@@ -25,11 +25,13 @@
             <tr>
                 <th style="background-color: rgba(169, 179, 179, 0.8);">Name</th>
                 <th style="background-color: rgba(169, 179, 179, 0.8);">Delete</th>
+                <th style="background-color: rgba(169, 179, 179, 0.8);">Edit</th>
             </tr>
             {{#countries}}
                 <tr style="background-color: rgba(169, 179, 179, 0.8);" >
                     <td>{{country_name}}</td>
                     <td><a style= "color:#1947D1;" href="/countries/{{id}}/delete">Delete</a></td>
+                    <td><a style= "color:#1947D1;" href="/countries/{{id}}/edit">Edit</a></td>	
                 </tr>
             {{/countries}}
         </table>

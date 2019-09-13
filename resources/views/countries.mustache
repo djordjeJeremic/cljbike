@@ -1,15 +1,8 @@
 <html>
 <head>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body  background="http://citymesh.com/src/Frontend/Files/blog/images/source/citymesh-covers-tour-de-france-with-moobox-tripod-en.jpg">
+<body  background="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fannabel%2Ffiles%2F2018%2F02%2FLouisville_Skyline-1200x801.jpg">
 <div class="container">
     <ul class="nav nav-pills">
         <li role="presentation"><a href="/drivers">Drivers</a></li>
@@ -25,11 +18,13 @@
             <tr>
                 <th style="background-color: rgba(169, 179, 179, 0.8);">Name</th>
                 <th style="background-color: rgba(169, 179, 179, 0.8);">Delete</th>
+                <th style="background-color: rgba(169, 179, 179, 0.8);">Edit</th>
             </tr>
             {{#countries}}
                 <tr style="background-color: rgba(169, 179, 179, 0.8);" >
                     <td>{{country_name}}</td>
                     <td><a style= "color:#1947D1;" href="/countries/{{id}}/delete">Delete</a></td>
+                    <td><a style= "color:#1947D1;" href="/countries/{{id}}/edit">Edit</a></td>		    
                 </tr>
             {{/countries}}
         </table>

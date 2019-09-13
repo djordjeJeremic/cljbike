@@ -46,6 +46,10 @@
   (GET "/countries/:id/delete" [id]
        (do (countries/delete id)
          (resp/redirect "/countries")))
+  (POST "/countries/:id/update" [& params]
+       (do (countries/update (:id params) params)
+         (resp/redirect "/countries")))
+  (GET "/countries/:id/edit" [id] (controller/edit-country id))
   (GET "/tracks" [] (controller/tracks))
   (POST "/tracks/create" [& params]
         (do (tracks/create params)

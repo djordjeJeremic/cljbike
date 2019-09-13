@@ -56,3 +56,5 @@
 (defn driver-standings []
   (render-template "driver_standings" {:drivers (drivers/get-standings)}))
 
+(defn edit-country [id]
+  (render-template "edit_country" {:country (countries/get id)}))

@@ -11,9 +11,9 @@
   (j/query mysql-db
            (s/select * :country)))
 
-(defn get [id]
-  (j/query mysql-db
-           (s/select * :country (s/where {:id id}))))
+((defn get [id]
+  (first (j/query mysql-db
+                  (s/select * :country (s/where {:id id})))))
 
 (defn create [params]
   (j/insert! mysql-db :country params))
